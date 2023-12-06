@@ -1,0 +1,54 @@
+[System]
+Name='ControlBorroso_T'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=2
+NumRules=9
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='E_d'
+Range=[0 15]
+NumMFs=3
+MF1='PEQUEÑA':'trimf',[0 3.75 7.5]
+MF2='GRANDE':'trimf',[7.5 11.25 15]
+MF3='MEDIA':'trimf',[3.75 7.5 11.25]
+
+[Input2]
+Name='E_theta'
+Range=[-3.14159265358979 3.14159265358979]
+NumMFs=3
+MF1='NEGATIVO':'trimf',[-3.142 -1.5707963267949 0]
+MF2='POSITIVO':'trimf',[0 1.5707963267949 3.14159265358979]
+MF3='CERO':'trimf',[-1.571 0 1.5707963267949]
+
+[Output1]
+Name='V'
+Range=[0 2]
+NumMFs=2
+MF1='CERO':'trimf',[-1 0 0.5]
+MF2='POSITIVO':'trapmf',[0 0.5 2 2]
+
+[Output2]
+Name='W'
+Range=[-1 1]
+NumMFs=3
+MF1='NEG':'trimf',[-1 -0.5 0]
+MF2='CERO':'trimf',[-0.5 0 0.5]
+MF3='POS':'trimf',[0 0.5 1]
+
+[Rules]
+1 1, 1 1 (1) : 1
+1 3, 1 2 (1) : 1
+1 2, 1 3 (1) : 1
+3 1, 2 1 (1) : 1
+3 3, 2 2 (1) : 1
+3 2, 2 3 (1) : 1
+2 1, 2 1 (1) : 1
+2 3, 2 2 (1) : 1
+2 2, 2 3 (1) : 1
