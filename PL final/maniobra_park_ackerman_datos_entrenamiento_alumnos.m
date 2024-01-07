@@ -6,9 +6,7 @@ clear all
 close all
 
 %rosinit('192.168.1.91')
-rosinit('http://192.168.1.91:11311', 'Nodehost', '192.168.1.107');
-
-load datos_entrenamiento.mat
+rosinit('http://192.168.5.171:11311', 'Nodehost', '192.168.5.129');
 
 global steering_wheel_angle;
 global vel_lineal_ackerman_kmh;
@@ -62,43 +60,43 @@ disp('Inicialización ACKERMAN finalizada correctamente');
 
 %% ***********************
 
-
-% training_data=[];
-
-inputs = training_data(:,[6,8,9,11]);
-outputs = training_data(:,[18,19]);
-inputs(isinf(inputs)) = 5.0;
-inputs = double(inputs');
-outputs = double(outputs');
-
-
-net = feedforwardnet([10]);
-net = configure(net,inputs,outputs);
-net = train(net,inputs,outputs);
-
-gensim(net)
-
+training_data=[];
 
 % Recorrido de aparcamiento para obtener datos de entrenamiento.
 
 %AVANCE 1
-% 
-% distancia=3.5
-% 
-% vel_lineal_ackerman_kmh = -3     %(km/h)
-% steering_wheel_angle =  20       % desde -90 a 90 grados.
 
+distancia=8.4
 
+vel_lineal_ackerman_kmh = -5     %(km/h)
+steering_wheel_angle =  0       % desde -90 a 90 grados.
+avanzar_ackerman
 
-% avanzar_ackerman
 
 % AVANCE 2
 
-%....
+distancia=5.2
+
+vel_lineal_ackerman_kmh = -3.8     %(km/h)
+steering_wheel_angle =  85       % desde -90 a 90 grados.
+avanzar_ackerman
 
 % AVANCE 3
 
-%....
+distancia=3.5
+
+vel_lineal_ackerman_kmh = -2.5     %(km/h)
+steering_wheel_angle =  0       % desde -90 a 90 grados.
+avanzar_ackerman
+
+
+% % AVANCE 4 (PARADA)
+% 
+% distancia=0
+% 
+% vel_lineal_ackerman_kmh = 0     %(km/h)
+% steering_wheel_angle =  0       % desde -90 a 90 grados.
+% avanzar_ackerman
 
 
 save datos_entrenamiento training_data
