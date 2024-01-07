@@ -5,9 +5,10 @@ rosshutdown
 clear all
 close all
 
-%rosinit('172.29.29.81')
-rosinit('http://172.29.29.81:11311', 'Nodehost', '172.29.29.65');
+%rosinit('192.168.1.91')
+rosinit('http://192.168.1.91:11311', 'Nodehost', '192.168.1.107');
 
+load datos_entrenamiento.mat
 
 global steering_wheel_angle;
 global vel_lineal_ackerman_kmh;
@@ -64,18 +65,18 @@ disp('Inicialización ACKERMAN finalizada correctamente');
 
 % training_data=[];
 
-inputs = training_data(:,[1,6]);
-outputs = training_data(:,[18]);
+inputs = training_data(:,[6,8,9,11]);
+outputs = training_data(:,[18,19]);
 inputs(isinf(inputs)) = 5.0;
-inputs = double(inputs);
-outputs = double(outputs);
+inputs = double(inputs');
+outputs = double(outputs');
 
 
-net = feedforwardnet([5, 10,2]);
+net = feedforwardnet([10]);
 net = configure(net,inputs,outputs);
 net = train(net,inputs,outputs);
 
-gensim(net,Ts)
+gensim(net)
 
 
 % Recorrido de aparcamiento para obtener datos de entrenamiento.
@@ -89,7 +90,7 @@ gensim(net,Ts)
 
 
 
-avanzar_ackerman
+% avanzar_ackerman
 
 % AVANCE 2
 
