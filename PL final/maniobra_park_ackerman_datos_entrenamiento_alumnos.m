@@ -66,16 +66,15 @@ training_data=[];
 
 %AVANCE 1
 
-distancia=8.4
+distancia=8.1
 
 vel_lineal_ackerman_kmh = -5     %(km/h)
 steering_wheel_angle =  0       % desde -90 a 90 grados.
 avanzar_ackerman
 
-
 % AVANCE 2
 
-distancia=5.4
+distancia=5.2
 
 vel_lineal_ackerman_kmh = -3.8     %(km/h)
 steering_wheel_angle =  85       % desde -90 a 90 grados.
@@ -90,13 +89,4 @@ steering_wheel_angle =  0      % desde -90 a 90 grados.
 avanzar_ackerman
 
 
-% % AVANCE 4 (PARADA)
-% 
-% distancia=0
-% 
-% vel_lineal_ackerman_kmh = 0     %(km/h)
-% steering_wheel_angle =  0       % desde -90 a 90 grados.
-% avanzar_ackerman
-
-
-save datos_entrenamiento4 training_data
+save datos_entrenamiento6 training_data
