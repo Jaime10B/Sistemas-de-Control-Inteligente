@@ -14,7 +14,7 @@ inputs = double(inputs');
 outputs = double(outputs');
 
 %Generación de la red
-net = feedforwardnet([10,10,2]);
+net = feedforwardnet([10,10,5]);
 net = configure(net,inputs,outputs);
 net = train(net,inputs,outputs);
 
