@@ -5,7 +5,6 @@ rosshutdown
 clear all
 close all
 
-%rosinit('192.168.1.91')
 rosinit('http://192.168.5.171:11311', 'Nodehost', '192.168.5.129');
 
 global steering_wheel_angle;
@@ -74,35 +73,19 @@ avanzar_ackerman
 
 %AVANCE 2
 
-distancia = 0.3
-
-vel_lineal_ackerman_kmh = 1     %(km/h)
-steering_wheel_angle =  -90      % desde -90 a 90 grados.
-avanzar_ackerman
-
-%AVANCE 3
-
-distancia = 4
+distancia=5.2
 
 vel_lineal_ackerman_kmh = -3.8     %(km/h)
 steering_wheel_angle =  85       % desde -90 a 90 grados.
 avanzar_ackerman
 
-% % AVANCE 2
-% 
-% distancia=5.2
-% 
-% vel_lineal_ackerman_kmh = -3.8     %(km/h)
-% steering_wheel_angle =  85       % desde -90 a 90 grados.
-% avanzar_ackerman
-% 
-% % AVANCE 3
-% 
-% distancia=3.9
-% 
-% vel_lineal_ackerman_kmh = -2.5     %(km/h)
-% steering_wheel_angle =  0      % desde -90 a 90 grados.
-% avanzar_ackerman
-% 
-% 
-% save datos_entrenamiento6 training_data
+%AVANCE 3
+
+distancia=3.9
+
+vel_lineal_ackerman_kmh = -2.5     %(km/h)
+steering_wheel_angle =  0      % desde -90 a 90 grados.
+avanzar_ackerman
+
+
+save datos_entrenamiento6 training_data
