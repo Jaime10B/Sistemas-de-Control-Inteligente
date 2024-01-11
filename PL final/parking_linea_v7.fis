@@ -22,11 +22,10 @@ MF3='GRANDE':'trapmf',[1.845 3 5 5]
 [Input2]
 Name='sonar_7'
 Range=[0 5]
-NumMFs=4
+NumMFs=3
 MF1='PEQUEÑO':'trapmf',[0 0 0.15 2]
 MF2='MEDIANO':'trimf',[2 2.15 2.7]
 MF3='GRANDE':'trapmf',[2.7 3.624 5.624 5.624]
-MF4='stop':'trimf',[1.35697463002114 1.35697463002114 1.38597463002114]
 
 [Input3]
 Name='sonar_8'
