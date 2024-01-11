@@ -4,7 +4,7 @@ Type='mamdani'
 Version=2.0
 NumInputs=4
 NumOutputs=2
-NumRules=9
+NumRules=8
 AndMethod='min'
 OrMethod='max'
 ImpMethod='min'
@@ -71,4 +71,3 @@ MF4='ATRAS_MANIOBRA':'trimf',[-5 -2.5 0]
 2 1 2 3, 3 4 (1) : 1
 3 1 2 3, 3 4 (1) : 1
 1 1 3 2, 2 4 (1) : 1
-1 2 2 3, 3 4 (1) : 1
